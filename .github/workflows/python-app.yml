@@ -40,5 +40,5 @@ jobs:
     - name: Build and Push Docker Image
       run: |
         docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_PASSWORD }}
-        docker build -t liuyingda7701/myapp:v1 .
-        docker push liuyingda7701/myapp:v1
+        docker build -t liuyingda7701/myapp2:v1 .
+        docker push liuyingda7701/myapp2:v1
