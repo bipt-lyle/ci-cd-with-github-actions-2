@@ -2,7 +2,7 @@ import unittest
 from app import app
 
 class TestIntegration(unittest.TestCase):
-    
+
 
     def setUp(self):
         self.app = app.test_client()
@@ -12,6 +12,10 @@ class TestIntegration(unittest.TestCase):
 
         add_response = self.app.post('/add', data={'item': 'Test Item'}, follow_redirects=True)
         self.assertEqual(add_response.status_code, 200) 
+
+
+        update_response = self.app.post('/update/0', data={'new_item': 'Updated Test Item'}, follow_redirects=True)
+        self.assertEqual(update_response.status_code, 200)
 
 
         index_response = self.app.get('/')
